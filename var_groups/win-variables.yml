@@ -1,0 +1,9 @@
+ansible_connection: winrm
+ansible_winrm_transport: credssp
+ansible_port: 5986  
+ansible_winrm_server_cert_validation: ignore
+ANSIBLE_PERSISTENT_COMMAND_TIMEOUT: 300
+ansible_command_timeout: 300
+ansible_winrm_read_timeout_sec: 55
+ansible_user: '{{ lookup("env", "ANSIBLE_USER") }}'
+ansible_password: '{{ lookup("env", "ANSIBLE_PASSWORD") }}'

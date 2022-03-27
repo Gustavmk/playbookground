@@ -1,0 +1,11 @@
+---
+- hosts: all
+  vars_files:
+    - var_groups/win-variables.yml
+  roles:
+    - ansible-role-omsagent-windows
+  vars:
+    - workspace_id: '{{ WORKSPACE_ID }}'
+    - workspace_key: '{{ WORKSPACE_KEY }}'
+    - purge_oms_config: True
+    - install_dependencyagent: True

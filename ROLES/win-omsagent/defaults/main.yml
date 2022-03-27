@@ -1,0 +1,10 @@
+---
+# defaults file for svendewindt.omsagentwindows
+
+url_omsagentx64: 'https://go.microsoft.com/fwlink/?LinkId=828603'
+url_omsagentx32: 'https://go.microsoft.com/fwlink/?LinkId=828604'
+MMAInstallerName: 'MMASetup.exe'
+purge_oms_config: False
+install_dependencyagent: True
+url_dependencyagent: 'https://aka.ms/dependencyagentwindows'
+dependencyagent_productid: 'DependencyAgent'

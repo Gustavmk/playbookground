@@ -1,0 +1,10 @@
+---
+# defaults file for harden_passwords
+passwordhistorysize: 24
+maxpasswordage: 60
+minpasswordage: 1
+minpasswordlength: 14
+passwordcomplexity: 1
+cleartextpassword: 0
+lockoutbadcount: 10
+resetlockoutcount: 15

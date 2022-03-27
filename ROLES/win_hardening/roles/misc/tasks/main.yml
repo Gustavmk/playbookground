@@ -1,0 +1,30 @@
+---
+# tasks file for misc
+
+- name: "Win CIS | Section 2.3.13.1 | Ensure 'Shutdown: Allow system to be shut down without having to log on' is set to 'Disabled'"
+  win_regedit:
+    path: HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System
+    name: ShutdownWithoutLogon
+    data: "0"
+    type: dword
+
+- name: "Win CIS | 9.1.1 | Ensure 'Windows Firewall: Domain: Firewall state' is set to 'On (recommended)'"
+  win_regedit:
+    path: HKLM:\Software\Policies\Microsoft\WindowsFirewall\DomainProfile
+    name: "EnableFirewall"
+    data: "1"
+    type: dword
+
+- name: "Win CIS | 18.1.1 | Ensure 'Prevent enabling lock screen camera' is set to 'Enabled'"
+  win_regedit:
+    path: HKLM:\SOFTWARE\Policies\Microsoft\Windows\Personalization
+    name: "NoLockScreenCamera"
+    data: "1"
+    type: dword
+
+- name: "Win CIS | Section 18.1.2 | Ensure 'Prevent enabling lock screen slide show' is set to 'Enabled'"
+  win_regedit:
+    path: HKLM:\SOFTWARE\Policies\Microsoft\Windows\Personalization
+    name: "NoLockScreenSlideshow"
+    data: "1"
+    type: dword  

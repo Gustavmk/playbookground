@@ -1,0 +1,65 @@
+---
+# tasks file for harden_interactivelogon
+
+- name: "Win CIS | Section 2.3.7.1 | Ensure 'Interactive logon: Do not require CTRL+ALT+DEL' is set to 'Disabled'"
+  win_regedit:
+    path: HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+    name: "DisableCAD"
+    data: "0"
+    type: dword
+
+- name: "Win CIS | Section 2.3.7.2 | Ensure 'Interactive logon: Don't display last signed-in' is set to 'Enabled'"
+  win_regedit:
+    path: HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+    name: "DontDisplayLastUserName"
+    data: "1"
+    type: dword
+
+- name: "Win CIS | Section 2.3.7.3 | Ensure 'Interactive logon: Machine inactivity limit' is set to '900 or fewer second(s), but not 0'"
+  win_regedit:
+    path: HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+    name: "InactivityTimeoutSecs"
+    data: "900"
+    type: dword
+
+- name: "Win CIS | Section 2.3.7.4 | Configure 'Interactive logon: Message text for users attempting to log on'"
+  win_regedit:
+    path: HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+    name: "LegalNoticeText"
+    data: "Welcome to the server.  Logon won'tcha?"
+    type: string
+
+- name: "Win CIS | Section 2.3.7.5 | Configure 'Interactive logon: Message title for users attempting to log on'"
+  win_regedit:
+    path: HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+    name: "LegalNoticeCaption"
+    data: "Liek... Hai der"
+    type: string
+
+- name: "Win CIS | Section 2.3.7.6 | Ensure 'Interactive logon: Number of previous logons to cache (in case domain controller is not available)' is set to '4 or fewer logon(s)'"
+  win_regedit:
+    path: HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
+    name: "CachedLogonsCount"
+    data: "4"
+    type: string
+
+- name: "Win CIS | Section 2.3.7.7 | Ensure 'Interactive logon: Prompt user to change password before expiration' is set to 'between 5 and 14 days'"
+  win_regedit:
+    path: HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
+    name: "PasswordExpiryWarning"
+    data: "14"
+    type: dword
+
+- name: "Win CIS | Section 2.3.7.8 | Ensure 'Interactive logon: Require Domain Controller Authentication to unlock workstation' is set to 'Enabled' (MS only)"
+  win_regedit:
+    path: HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
+    name: "ForceUnlockLogon"
+    data: "1"
+    type: dword
+
+- name: "Win CIS | Section 2.3.7.9 | Ensure 'Interactive logon: Smart card removal behavior' is set to 'Lock Workstation' or higher"
+  win_regedit:
+    path: HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
+    name: "ScRemoveOption"
+    data: "1"
+    type: string

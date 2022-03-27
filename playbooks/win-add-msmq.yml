@@ -1,0 +1,18 @@
+---
+# This playbook installs the Microsoft Message queuing services
+
+- name: Add MSMQ role
+  hosts: '{{ host }}'
+  tasks:
+    
+    - name: Install message Queuing services
+      win_feature:
+        name: MSMQ
+        state: present
+        include_sub_features: True
+        include_management_tools: True
+      register: win_feature
+
+    - name: reboot if new features requires a windows reboot
+      win_reboot:
+      when: win_feature.reboot_required

@@ -1,0 +1,30 @@
+{
+ "collection_info": {
+  "namespace": "twnki",
+  "name": "win_hardening",
+  "version": "1.0.2",
+  "authors": [
+   "your name <example@domain.com>"
+  ],
+  "readme": "README.md",
+  "tags": [],
+  "description": "Collection designed to assist with hardening Windows Server 2019",
+  "license": [
+   "GPL-2.0-or-later"
+  ],
+  "license_file": null,
+  "dependencies": {},
+  "repository": "http://example.com/repository",
+  "documentation": "http://docs.example.com",
+  "homepage": "http://example.com",
+  "issues": "http://example.com/issue/tracker"
+ },
+ "file_manifest_file": {
+  "name": "FILES.json",
+  "ftype": "file",
+  "chksum_type": "sha256",
+  "chksum_sha256": "193afb07337c2711ed03bf6988db84abbe0563e79cb8b1a978f98c834bd0bce6",
+  "format": 1
+ },
+ "format": 1
+}

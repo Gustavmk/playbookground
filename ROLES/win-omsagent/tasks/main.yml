@@ -1,0 +1,85 @@
+---
+# tasks file for svendewindt.omsagentwindows
+
+- name: Check whether OMS agent is already installed
+  win_service:
+    name: HealthService
+  register: service_installed
+  failed_when: service_installed is not defined
+#  ignore_errors: yes
+
+- debug:
+   msg: '{{ service_installed }}'
+
+- name: Windows 32-bit block
+  block:
+  - name: Download OMS agent 32-bit
+    win_get_url:
+      url: '{{ url_omsagentx32 }}'
+      dest: '{{ ansible_env.TEMP }}\{{ MMAInstallerName }}'
+    when: service_installed.state is not defined or service_installed.name is not defined or purge_oms_config
+  when: ansible_architecture == "32-bit"
+  
+- name: Windows 64-bit block
+  block:
+  - name: Download OMS agent 64-bit
+    win_get_url:
+      url: '{{ url_omsagentx64 }}'
+      dest: '{{ ansible_env.TEMP }}\{{ MMAInstallerName }}'
+    when: service_installed.state is not defined or service_installed.name is not defined or purge_oms_config
+  when: ansible_architecture == "64-bit"
+
+- name: Copy the Get-SoftwareGuid to the target
+  win_copy:
+    src: '{{ role_path }}/files/Get-SoftwareGuid.ps1'
+    dest: '{{ ansible_env.TEMP }}\Get-SoftwareGuid.ps1'
+  when: purge_oms_config and service_installed.exists
+
+- name: Determine the software guid of the installed OMS agent if any
+  win_shell: '{{ ansible_env.TEMP }}\Get-SoftwareGuid.ps1'
+  register: output
+  when: purge_oms_config and service_installed.exists
+#  ignore_errors: yes
+
+- name: Process output from Powershell script
+  set_fact:
+    psoutput: '{{ output.stdout | from_json }}'
+  when: purge_oms_config and service_installed.exists
+#  ignore_errors: yes
+
+#- debug:
+#    msg: Guid is {{ psoutput.guid }}
+#  when: purge_oms_config and service_installed.exists
+
+- name: Purge any existing configuration for the OMS agent
+  win_command: 'msiexec /x {{ psoutput.guid }} /qn'
+  when: purge_oms_config and service_installed.exists
+
+- name: Install OMS agent
+  win_command: '{{ ansible_env.TEMP }}\{{ MMAInstallerName }} /Q:A /R:N /C:"setup.exe /qn ADD_OPINSIGHTS_WORKSPACE=1 OPINSIGHTS_WORKSPACE_ID={{ workspace_id }} OPINSIGHTS_WORKSPACE_KEY={{ workspace_key }} AcceptEndUserLicenseAgreement=1"'
+  when: (service_installed.state is not defined or service_installed.name is not defined) or purge_oms_config
+
+- name: Remove the Powershell script
+  win_file: 
+    path: '{{ ansible_env.TEMP }}\Get-SoftwareGuid.ps1'
+    state: absent
+
+- name: Remove the OMS Installer file
+  win_file:
+    path: '{{ ansible_env.TEMP }}\{{ MMAInstallerName }}'
+    state: absent
+  when: service_installed.state is not defined or service_installed.name is not defined
+
+- name: Make sure the OMS agent service is running and is set to run automatically
+  win_service:
+    name: HealthService
+    start_mode: auto
+    state: started
+
+- name: Install dependency agent
+  win_package:
+    path: "{{ url_dependencyagent }}"
+    product_id: "{{ dependencyagent_productid }}"
+    arguments: '/S /AcceptEndUserLicenseAgreement:1'
+    state: present
+  when: install_dependencyagent

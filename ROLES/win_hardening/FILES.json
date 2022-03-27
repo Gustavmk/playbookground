@@ -1,0 +1,817 @@
+{
+ "files": [
+  {
+   "name": ".",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "README.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "880e3cbe873581fcb08def87c3344566fd848c262b4fe4488556b42a9ccf2ce6",
+   "format": 1
+  },
+  {
+   "name": "docs",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "plugins",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "plugins/README.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "9da8808fac4cc7dd486465ec3d2fc92046f3b34aa297af31af326b49f723279c",
+   "format": 1
+  },
+  {
+   "name": "roles",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/misc",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/misc/.travis.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "43e63a93716f15cdb102c201e4631be604b45910b8c749c78d89e3fc076c7c7e",
+   "format": 1
+  },
+  {
+   "name": "roles/misc/README.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "cc751d75266f757a38189f15d54e548dc87706f14a39756995c27b49eaca8a07",
+   "format": 1
+  },
+  {
+   "name": "roles/misc/defaults",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/misc/defaults/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "1af8a8c6509012a677c93f63b4f440cb8d7d7b65c32a6bfff5886fa00e0250e8",
+   "format": 1
+  },
+  {
+   "name": "roles/misc/files",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/misc/handlers",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/misc/handlers/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "b06faa8050a86888ff15aab59029cec6e9c4dc155c4c25805bb469b9226f5c89",
+   "format": 1
+  },
+  {
+   "name": "roles/misc/meta",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/misc/meta/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e82c60136cb1895d61432dd52c83d4c6e8ad4c654a697ac2d5b5e4a288866d87",
+   "format": 1
+  },
+  {
+   "name": "roles/misc/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/misc/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "cf245d0412e53ee3c058aa464bb05e402e3508ec7314cd8714f3ce57d0eccea4",
+   "format": 1
+  },
+  {
+   "name": "roles/misc/templates",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/misc/tests",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/misc/tests/inventory",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e02233819b1a09844410549191813f7cc7ba360f21298578f4ba1727a27d87fc",
+   "format": 1
+  },
+  {
+   "name": "roles/misc/tests/test.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "ee5584bbe6a63ae1e0dd5384ebaad068d1778dfe96ec69114c39c275b335e729",
+   "format": 1
+  },
+  {
+   "name": "roles/misc/vars",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/misc/vars/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "13f92e63d66cca501b51667ad12b261e686622ad912cdcea9572de65ca9249f3",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_devices",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_devices/.travis.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "43e63a93716f15cdb102c201e4631be604b45910b8c749c78d89e3fc076c7c7e",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_devices/README.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "cc751d75266f757a38189f15d54e548dc87706f14a39756995c27b49eaca8a07",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_devices/defaults",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_devices/defaults/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "a2c83fb7b99b85f8bdd51a0e27029a3c948b0d09036d80553802447cb4c49776",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_devices/files",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_devices/handlers",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_devices/handlers/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "c14ca95155ba30ad3fa524aa814c5534ebd66eb04123f23db213ee72cbca0bd7",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_devices/meta",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_devices/meta/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e82c60136cb1895d61432dd52c83d4c6e8ad4c654a697ac2d5b5e4a288866d87",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_devices/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_devices/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "4c19cc935667aba1c5a150c9ab0e2ab2e172c0c124d616065fa0ba585cd48505",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_devices/templates",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_devices/tests",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_devices/tests/inventory",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e02233819b1a09844410549191813f7cc7ba360f21298578f4ba1727a27d87fc",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_devices/tests/test.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "687ede1a57cf9f6390a5da29a7a25c6b67fa4c194b31cbe4d485388107b9522d",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_devices/vars",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_devices/vars/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "204cf93af69b65d0d267f31526a19eba39c8efe789a0a5738bedbee002cdf703",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networkclient",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networkclient/.travis.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "43e63a93716f15cdb102c201e4631be604b45910b8c749c78d89e3fc076c7c7e",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networkclient/README.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "cc751d75266f757a38189f15d54e548dc87706f14a39756995c27b49eaca8a07",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networkclient/defaults",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networkclient/defaults/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "d098196db3e578fc96a2e56c715afbd99dd6e181a6915649bbef4302d4fb031e",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networkclient/files",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networkclient/handlers",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networkclient/handlers/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "4c9e5a9f769af99f4d70e3fb1d254fb64a1c20743e1d1310a657b348a8806f85",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networkclient/meta",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networkclient/meta/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e82c60136cb1895d61432dd52c83d4c6e8ad4c654a697ac2d5b5e4a288866d87",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networkclient/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networkclient/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "b02d3706669eb4cf3054dda4f7f2d431985956a985db03c76403466e373925d0",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networkclient/templates",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networkclient/tests",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networkclient/tests/inventory",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e02233819b1a09844410549191813f7cc7ba360f21298578f4ba1727a27d87fc",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networkclient/tests/test.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "1106a92c2e8204b92b43f17d3293446505e67012b528a23e7709a65c7156719c",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networkclient/vars",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networkclient/vars/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "ff7003dc32bb22773926230719e2c03a136901fe4737606091d90b93ac3b8640",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networksecurity",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networksecurity/.travis.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "43e63a93716f15cdb102c201e4631be604b45910b8c749c78d89e3fc076c7c7e",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networksecurity/README.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "cc751d75266f757a38189f15d54e548dc87706f14a39756995c27b49eaca8a07",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networksecurity/defaults",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networksecurity/defaults/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "005d93f96b8208fe7fe95c5db6abeb483262b664142eec0fffb8835985f52c82",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networksecurity/files",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networksecurity/handlers",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networksecurity/handlers/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "7935caa37b19fe2edf3beb5325ac6964c0f0456831d2acb68d0a8b8bb9feefda",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networksecurity/meta",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networksecurity/meta/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e82c60136cb1895d61432dd52c83d4c6e8ad4c654a697ac2d5b5e4a288866d87",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networksecurity/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networksecurity/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "115a421bef5fa537eadebfa872e5335e3cac0cc7c3cc749880725be5638184c3",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networksecurity/templates",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networksecurity/tests",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networksecurity/tests/inventory",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e02233819b1a09844410549191813f7cc7ba360f21298578f4ba1727a27d87fc",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networksecurity/tests/test.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "a2ed60d7bfdbde4c7a898bcc7d049ca36e387fb242ff2576f0f7f172eccd8f81",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networksecurity/vars",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_networksecurity/vars/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "98539885242afcac8248d3772b3c222b6c086422d63bbb1461fe7be57775c31d",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_passwords",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_passwords/.travis.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "43e63a93716f15cdb102c201e4631be604b45910b8c749c78d89e3fc076c7c7e",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_passwords/README.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "cc751d75266f757a38189f15d54e548dc87706f14a39756995c27b49eaca8a07",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_passwords/defaults",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_passwords/defaults/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "d741d4cc078507c8a15b0806218218026b3117372abf8712e3a4207c826a0146",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_passwords/files",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_passwords/handlers",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_passwords/handlers/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "d7cbc854e181dbbb2a2ed9202cbea3b8beba1477e3b6c9811b55e7f0eaee8c9c",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_passwords/meta",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_passwords/meta/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e82c60136cb1895d61432dd52c83d4c6e8ad4c654a697ac2d5b5e4a288866d87",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_passwords/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_passwords/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "22373bc39956dcb0a4a445c59b95530aa2902b0c388e756d6c3e16f8003c1c79",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_passwords/templates",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_passwords/tests",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_passwords/tests/inventory",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e02233819b1a09844410549191813f7cc7ba360f21298578f4ba1727a27d87fc",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_passwords/tests/test.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "d7584501c40e9e63b44ad55d6c8061bc7eeaeacd716637957834eb5492901907",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_passwords/vars",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_passwords/vars/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "c2b6f5e59776ed4c08c4360785a9ac5511bd50153e694d82024d292388a5a092",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_interactivelogon",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_interactivelogon/.travis.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "43e63a93716f15cdb102c201e4631be604b45910b8c749c78d89e3fc076c7c7e",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_interactivelogon/README.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "cc751d75266f757a38189f15d54e548dc87706f14a39756995c27b49eaca8a07",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_interactivelogon/defaults",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_interactivelogon/defaults/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e9e08832955f53e3abd93d65d8801a7c7960a6aa4fe887c5d782472a9ea29345",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_interactivelogon/files",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_interactivelogon/handlers",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_interactivelogon/handlers/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "7e523cbb24b6aabe867ce85e67979d220bc246156141a26ba6a617f453290141",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_interactivelogon/meta",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_interactivelogon/meta/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e82c60136cb1895d61432dd52c83d4c6e8ad4c654a697ac2d5b5e4a288866d87",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_interactivelogon/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_interactivelogon/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "6d620750639f04a61c5167a82a4b777a2a5dcf28e97dfe6e3d12f0ac5636560f",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_interactivelogon/templates",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_interactivelogon/tests",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_interactivelogon/tests/inventory",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e02233819b1a09844410549191813f7cc7ba360f21298578f4ba1727a27d87fc",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_interactivelogon/tests/test.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "8596171f9d28ebb3d0227fcef7449b57e90f4a3f8c2ddced68953b423d76f4a5",
+   "format": 1
+  },
+  {
+   "name": "roles/harden_interactivelogon/vars",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/harden_interactivelogon/vars/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "ce9e4a928bf8269a3b7d33949efd10feb4c50db20943c71dcee402582cbf987e",
+   "format": 1
+  },
+  {
+   "name": "meta",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "meta/runtime.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "bbadf0e0141187acd96d0c7b11dac4559654873a8b86e04dafa58731bc1c1296",
+   "format": 1
+  }
+ ],
+ "format": 1
+}

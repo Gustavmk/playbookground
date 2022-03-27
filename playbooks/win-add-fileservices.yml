@@ -1,0 +1,17 @@
+---
+# This playbook installs the Windows file services feature
+
+- name: Add file services feature
+  hosts: '{{ host }}'
+  tasks:
+
+    - name: Install File services
+      win_feature:
+          name: FileAndStorage-Services
+          include_management_tools: yes
+          include_sub_features: yes
+          state: present
+
+    - name: reboot if installing Web-Server feature requires it
+      win_reboot: 
+      when: win_feature.reboot_required

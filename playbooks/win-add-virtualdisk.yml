@@ -1,0 +1,14 @@
+---
+# Playbook to add a new Virtual disk to a Virtual machine in vSphere.
+# defaults to store the new VMDK with the VM
+
+- name: add a virtual disk to an existing VM
+  hosts: localhost
+  tasks:
+      name:
+      vmware_guest: 
+        name: "{{ vm_name }}"
+        disk: 
+        - size_gb: "{{ size_gb }}"
+          type: thin
+          datastore:

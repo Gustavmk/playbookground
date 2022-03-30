@@ -1,36 +1,51 @@
 ---
-# This playbook configures common IIS roles & features on Windwos Servers
 
-- name: Setup Web
-  hosts: '{{ host }}'
-  tasks:
-    
-    - name: Install IIS (Core Web-Server & tools)
-      win_feature:
-        name: Web-WebServer, Web-Common-Http, Web-Default-Doc, Web-Dir-Browsing, Web-Http-Errors, Web-Static-Content, Web-Http-Redirect, Web-DAV-Publishing
-        state: present
-    
-    - name: Web health tools
-      win_feature:
-        name: Web-Health, Web-Http-Logging, Web-Custom-Logging, Web-Log-Libraries, Web-ODBC-Logging, Web-Request-Monitor, Web-http-Tracing
-        state: present
+- name: Install IIS (Core Web-Server & tools) 
+  win_feature:
+    name: Web-WebServer, Web-Common-Http, Web-Default-Doc, Web-Http-Errors, Web-Static-Content, Web-Http-Redirect
+    state: present
 
-    - name: Web performance tools
-      win_feature:
-        name: Web-Performance, Web-Stat-Compression, Web-Dyn-Compression
-        state: present
+- name: Install IIS (Core Web-Server & tools) - Remove
+  win_feature:
+    name: Web-Dir-Browsing, Web-DAV-Publishing
+    state: absent
 
-    - name: Web security tools
-      win_feature:
-        name: Web-Security, Web-Filtering, Web-basic-Auth, Web-Client-Auth, Web-Digest-Auth, Web-Cert-Auth, Web-IP-Security, Web-Url-Auth, Web-Windows-Auth
-        state: present
+- name: Web health tools
+  win_feature:
+    name: Web-Health, Web-Http-Logging, Web-Custom-Logging, Web-Log-Libraries, Web-ODBC-Logging, Web-Request-Monitor, Web-http-Tracing
+    state: present
 
-    - name: Web App tools
-      win_feature:
-        name: Web-App-Dev, Web-Net-Ext45, Web-ASP, Web-Asp-Net45, Web-CGI, Web-ISAPI-Ext, Web-ISAPI-Filter, Web-Includes
-        state: present
+- name: Web performance tools
+  win_feature:
+    name: Web-Performance, Web-Stat-Compression, Web-Dyn-Compression
+    state: present
 
-    - name: Install Web management Tools
-      win_feature:
-        name: Web-Mgmt-Tools, Web-Mgmt-Console, Web-Mgmt-Compat, Web-Metabase, Web-Lgcy-Mgmt-Console, Web-Lgcy-Scripting, Web-WMI
-        state: present
+- name: Web performance tools - Remove
+  win_feature:
+    name: Web-Dyn-Compression
+    state: absent
+
+- name: Web security tools
+  win_feature:
+    name: Web-Security, Web-Filtering, Web-basic-Auth,  Web-IP-Security
+    state: present
+
+- name: Web security tools - Remove
+  win_feature:
+    name: Web-Client-Auth, Web-Digest-Auth, Web-Cert-Auth, Web-Url-Auth, Web-Windows-Auth
+    state: absent
+
+- name: Web App tools
+  win_feature:
+    name: Web-App-Dev, Web-Net-Ext45, Web-ASP, Web-Asp-Net45, Web-CGI, Web-ISAPI-Ext, Web-ISAPI-Filter, Web-Includes
+    state: present
+
+- name: Install Web management Tools
+  win_feature:
+    name: Web-Mgmt-Tools, Web-Mgmt-Console,Web-WMI, Web-Scripting-Tools
+    state: present
+
+- name: Install Web management Tools - Remove
+  win_feature:
+    name: Web-Mgmt-Compat, Web-Metabase, Web-Lgcy-Mgmt-Console
+    state: present

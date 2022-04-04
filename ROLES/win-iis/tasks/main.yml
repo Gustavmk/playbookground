@@ -3,10 +3,25 @@
 - name: ensure iis is installed
   win_feature:
     name: 'Web-Server'
-    include_sub_features: yes
+    #include_sub_features: yes
     include_management_tools: yes
     restart: yes
-  notify: remove defaults
+  notify: 
+    - remove defaults
+    - install features
+    - remove features
+
+- name: Create Temp dir 
+  win_shell: |
+    $value = Test-Path -Path C:\temp
+    if ($value) {
+        Remove-Item -Path C:\temp -Force
+    }
+    New-Item -Path C:\temp -ItemType Directory
+  notify: 
+    - remove defaults
+    - install features
+    - remove features
 
 - name: ensure path for site exists
   win_file:

@@ -7,9 +7,7 @@
     - role: win-iis
       name: Install IIS
 
-  tasks:
-    
-    - include_tasks: playbooks/win-coreweb.yml
-      name: IIS LINT
-
-      
+#  tasks:
+#    
+#    - include_tasks: playbooks/win-coreweb.yml
+#      name: IIS LINT

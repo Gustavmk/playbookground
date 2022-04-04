@@ -2,7 +2,7 @@
 # for the 'ansible' user
 
 - hosts: '{{ host }}'
-  gather_facts: no
+  gather_facts: false
 
   tasks:
 

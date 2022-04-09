@@ -35,6 +35,10 @@ terraform.rc
 
 
 # Ansible env file
+*.env.linux.local
 *.env.local
 
+
+# SSH
+*.key
 

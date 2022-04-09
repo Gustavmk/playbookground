@@ -11,6 +11,7 @@ conditional_groups:
 
 keyed_groups:
   - key: tags.role
+#  - key: tags.swarm_role
 
 plain_host_names: yes
 

@@ -5,6 +5,8 @@
 docker run -v ${PWD}:/work:ro --env-file ${PWD}/.env.local --rm gustavmk/ansiblecontainer:latest "./auth_azcli.sh ; ansible-inventory -i inventory/in-azure_rm.yml --list" 
 docker run -v ${PWD}:/work:ro --env-file ${PWD}/.env.local --rm gustavmk/ansiblecontainer:latest "./auth_azcli.sh ; ansible-inventory -i inventory/in-azure_rm.yml --graph" 
 
+# Create a new role - Both
+docker run -v ${PWD}:/work:ro --env-file ${PWD}/.env.local --rm gustavmk/ansiblecontainer:latest "ansible-galaxy init ${PWD}/tools"
 
 
 # linux - Docker role

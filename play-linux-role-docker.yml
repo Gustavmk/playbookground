@@ -6,3 +6,4 @@
   roles:
    - linux-docker
    - linux-swarm
+   - linux-swarm-traefik

@@ -1,0 +1,14 @@
+---
+# handlers file for /mnt/c/git/Workshop-AnsibleTerraform/PlaybookGround/roles/win-ssh
+
+- name: handler - ssh stop 
+  win_service:
+    name: sshd
+    state: stopped
+  listen: ssh stop
+
+- name: handler - ssh restart 
+  win_service:
+    name: sshd
+    state: restarted
+  listen: ssh restart

@@ -1,0 +1,5 @@
+---
+- hosts: localhost
+  remote_user: root
+  roles:
+    - /mnt/c/git/Workshop-AnsibleTerraform/PlaybookGround/roles/win-ssh

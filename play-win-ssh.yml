@@ -1,0 +1,10 @@
+---
+#  winrm quickconfig ; Enable-WSManCredSSP -force -role Server
+- hosts: all
+  vars_files:
+    - var_groups/win-variables-http.yml
+  roles:
+
+    - role: win-ssh
+      name: Configure SSH
+

@@ -1,0 +1,65 @@
+---
+# tasks file for /mnt/c/git/Workshop-AnsibleTerraform/PlaybookGround/roles/win-ssh
+
+- name: Create Temp
+  ansible.windows.win_powershell:
+    script: |
+      [CmdletBinding()]
+      param (
+          [String]
+          $Path,
+
+          [Switch]
+          $Force
+      )
+
+      New-Item -Path $Path -ItemType Direcotry -Force:$Force
+    parameters:
+      Path: C:\temp
+      Force: true
+
+- name: Disable IE FirstRunCustomize
+  ansible.windows.win_powershell:
+    script: |
+      Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Internet Explorer\Main" -Name "DisableFirstRunCustomize" -Value 2
+
+- name: SSH Install - Client
+  ansible.windows.win_powershell: 
+    script: |
+      Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine -Force ; `
+      $OpenSSHClient = Get-WindowsCapability -Online | ? Name -like ‘OpenSSH.Client*’ ; `
+      Add-WindowsCapability -Online -Name $OpenSSHClient.Name
+
+- name: SSH Install - Server
+  ansible.windows.win_powershell: 
+    script: |
+      Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine -Force ; `
+      $OpenSSHServer = Get-WindowsCapability -Online | ? Name -like ‘OpenSSH.Server*’ ; `
+      Add-WindowsCapability -Online -Name $OpenSSHServer.Name
+  notify: ssh stop
+
+- name: SSH Default Shell
+  ansible.windows.win_powershell:
+    script: |
+      New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -PropertyType String -Force
+
+- name: SSH CONFIG 
+  ansible.windows.win_powershell:
+    script: |
+      (gc C:\ProgramData\ssh\sshd_config) -replace "#PasswordAuthentication yes", "PasswordAuthentication no" | set-content C:\ProgramData\ssh\sshd_config ; `
+      (gc C:\ProgramData\ssh\sshd_config) -replace "#PubkeyAuthentication yes", "PubkeyAuthentication yes" | set-content C:\ProgramData\ssh\sshd_config ; `
+      cmd /c 'icacls.exe "C:\ProgramData\ssh\administrators_authorized_keys" /inheritance:r /grant "Administrators:F" /grant "SYSTEM:F"'
+  notify: 
+    - ssh restart
+
+- name: SSH Server service
+  ansible.windows.win_service:
+    name: sshd
+    start_mode: auto
+    state: started
+
+- name: SSH - Agent service
+  ansible.windows.win_service:
+    name: ssh-agent
+    start_mode: auto
+    state: started

@@ -38,6 +38,9 @@ terraform.rc
 *.env.linux.local
 *.env.local
 
+# Inventory
+*.inventory
+
 
 # SSH
 *.key

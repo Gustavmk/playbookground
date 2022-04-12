@@ -1,0 +1,7 @@
+Exemplo de Include
+---
+
+   tasks:
+    
+    - include_tasks: playbooks/win-coreweb.yml
+      name: IIS LINT

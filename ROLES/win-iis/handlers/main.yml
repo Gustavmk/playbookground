@@ -5,8 +5,6 @@
     name: w3svc
     state: restarted
 
-
-
 # install IIS features
 
 - name: Install IIS (Core Web-Server & tools) 

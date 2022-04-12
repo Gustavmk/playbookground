@@ -28,6 +28,7 @@
     args:
     - "--log.level=INFO"
     - "--api.dashboard=true"
+    - "--api.insecure=true"
     - "--entryPoints.http.address=:80"
     - "--entryPoints.api.address=:8080"
     - "--entryPoints.https.address=:443"
@@ -47,8 +48,8 @@
   docker_swarm_service:
     name: visualizer
     image: dockersamples/visualizer
-    #publish:
-    #  - { published_port: 8080, target_port: 8080}
+    publish:
+      - { published_port: 8080, target_port: 8080}
     networks:
       - "traefik_net"
     placement:

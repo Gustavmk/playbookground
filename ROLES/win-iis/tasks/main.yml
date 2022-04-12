@@ -7,21 +7,22 @@
     include_management_tools: yes
     restart: yes
   notify: 
-    - remove defaults
     - install features
-    - remove features
+  meta: flush_handlers
 
-- name: Create Temp dir 
-  win_shell: |
-    $value = Test-Path -Path C:\temp
-    if ($value) {
-        Remove-Item -Path C:\temp -Force
-    }
-    New-Item -Path C:\temp -ItemType Directory
+- name: Remove Defaults
+  meta: flush_handlers
   notify: 
     - remove defaults
-    - install features
     - remove features
+
+#- name: Create Temp dir 
+#  win_shell: |
+#    $value = Test-Path -Path C:\temp
+#    if ($value) {
+#        Remove-Item -Path C:\temp -Force
+#    }
+#    New-Item -Path C:\temp -ItemType Directory
 
 - name: ensure path for site exists
   win_file:

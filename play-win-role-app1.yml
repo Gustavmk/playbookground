@@ -2,12 +2,49 @@
 - hosts: all
   vars_files:
     - var_groups/win-variables.yml
+
   roles:
 
     - role: win-iis
       name: Install IIS
 
-#  tasks:
-#    
-#    - include_tasks: playbooks/win-coreweb.yml
-#      name: IIS LINT
+  tasks:
+
+    - name: IIS Dir
+      win_file:
+        path: c:\site
+        state: directory
+
+    - name: IIS API Dir
+      win_file:
+        path: c:\site\API
+        state: directory
+
+    - name: Create a new application pool
+      win_iis_webapppool:
+        name: ansiblepool
+        state: started
+
+    - name: IIS site
+      win_iis_website:
+        name: iis_via_ansible.org
+        state: started
+        port: 80
+        ip: '*'
+        hostname: ''
+        application_pool: ansiblepool
+        physical_path: C:\site\
+
+    - name: Add api webapplication on IIS.
+      win_iis_webapplication:
+        name: api
+        site: iis_via_ansible.org
+        state: present
+        physical_path: C:\site\api
+
+    - name: copy index.html
+      win_copy:
+        src: samples/index.html
+        dest: c:\site\
+
+

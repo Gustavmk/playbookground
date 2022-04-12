@@ -4,5 +4,4 @@
     - var_groups/linux-variables.yml
   become: yes
   roles:
-   - linux-docker
-   - linux-swarm
+   - linux-swarm-traefik

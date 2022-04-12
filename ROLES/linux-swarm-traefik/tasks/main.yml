@@ -40,7 +40,7 @@
       traefik.http.routers.traefik-public-http.entrypoints: "http"
       traefik.http.routers.traefik-public-http.service: "api@internal"
       traefik.http.services.traefik-public.loadbalancer.server.port: "8080"
-    replicas: 1
+    replicas: 3
   when: inventory_hostname in groups['_manager'][0]
 
 - name: install visualizer

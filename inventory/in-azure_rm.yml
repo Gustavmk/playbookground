@@ -1,3 +1,4 @@
+# DOC: https://docs.ansible.com/ansible/latest/collections/azure/azcollection/azure_rm_inventory.html
 plugin: azure_rm
 
 include_vm_resource_groups:
@@ -6,15 +7,18 @@ include_vm_resource_groups:
 auth_source: cli
 
 conditional_groups:
-  linux: "'Ubuntu' in image.offer"
-  windows: "'WindowsServer' in image.offer"
+  OS_Linux: "'UbuntuServer' in image.offer"
+  OS_Windows: "'WindowsServer' in image.offer"
 
 keyed_groups:
-  - key: tags.role
-    #separator: ""
-#  - key: tags.swarm_role
+#  - prefix: role
+#    key: tags.role
+#    separator: ""
+  
+  - key: tags.swarm_role | default ('none')
 
-
+#  - prefix: LOC
+#    key: location
 
 plain_host_names: yes
 
@@ -23,11 +27,10 @@ plain_host_names: yes
 
 
 # excludes a host from the inventory when any of these expressions is true, can refer to any vars defined on the host
-#exclude_host_filters:
+exclude_host_filters:
 # excludes hosts in the eastus region
-#  - location in ['eastus']
+  - location in ['eastus2']
 # excludes hosts that are powered off
 #  - powerstate != 'running'
-
-
-# DOC: https://docs.ansible.com/ansible/latest/collections/azure/azcollection/azure_rm_inventory.html
+# excludes SO 
+  - image.offer != "UbuntuServer"

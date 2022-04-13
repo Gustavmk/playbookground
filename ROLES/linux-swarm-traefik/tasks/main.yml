@@ -3,6 +3,7 @@
   docker_network:
     name: traefik_net
     driver: overlay
+    state: present
   when: inventory_hostname in groups['_manager']
 
 - name: Deploy traefik service

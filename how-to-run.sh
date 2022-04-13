@@ -7,6 +7,9 @@ docker run -v ${PWD}:/work:ro --env-file ${PWD}/.env.local --rm gustavmk/ansible
 # Check Inventory - Both Linux / Windows
 docker run -v ${PWD}:/work:ro --env-file ${PWD}/.env.local --rm gustavmk/ansiblecontainer:latest "ansible-inventory -i inventory/00.inventory --list" 
 
+# Windows - WIN_PING 
+docker run -v ${PWD}:/work:ro --env-file ${PWD}/.env.local --rm gustavmk/ansiblecontainer:latest "ansible-playbook -i inventory/00.inventory play-win-ping.yml"
+
 # Create a new role - Both
 docker run -v ${PWD}:/work:ro --env-file ${PWD}/.env.local --rm gustavmk/ansiblecontainer:latest "ansible-galaxy init ${PWD}/tools"
 

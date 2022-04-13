@@ -9,10 +9,12 @@ conditional_groups:
   linux: "'Ubuntu' in image.offer"
   windows: "'WindowsServer' in image.offer"
 
-#keyed_groups:
-#  - key: tags.role
+keyed_groups:
+  - key: tags.role
+    #separator: ""
 #  - key: tags.swarm_role
-#separator: ""
+
+
 
 plain_host_names: yes
 
@@ -26,3 +28,6 @@ plain_host_names: yes
 #  - location in ['eastus']
 # excludes hosts that are powered off
 #  - powerstate != 'running'
+
+
+# DOC: https://docs.ansible.com/ansible/latest/collections/azure/azcollection/azure_rm_inventory.html

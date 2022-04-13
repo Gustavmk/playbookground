@@ -1,20 +1,52 @@
 ---
-
 - name: ensure iis is installed
   win_feature:
     name: 'Web-Server'
     #include_sub_features: yes
     include_management_tools: yes
     restart: yes
-  notify: 
-    - install features
-  meta: flush_handlers
 
-- name: Remove Defaults
-  meta: flush_handlers
+- name: Install IIS (Core Web-Server & tools) 
+  win_feature:
+    name: Web-WebServer, Web-Common-Http, Web-Default-Doc, Web-Http-Errors, Web-Static-Content, Web-Http-Redirect
+    state: present
+  
+- name: Web health tools
+  win_feature:
+    name: Web-Health, Web-Http-Logging, Web-Custom-Logging, Web-Log-Libraries, Web-ODBC-Logging, Web-Request-Monitor, Web-http-Tracing
+    state: present
+  
+- name: Web performance tools
+  win_feature:
+    name: Web-Performance, Web-Stat-Compression
+    state: present
+
+- name: Web security tools
+  win_feature:
+    name: Web-Security, Web-Filtering, Web-basic-Auth,  Web-IP-Security
+    state: present
+
+- name: Web App tools
+  win_feature:
+    name: Web-App-Dev, Web-AppInit, Web-Net-Ext, Web-Asp-Net, Web-Net-Ext45, Web-ASP, Web-Asp-Net45, Web-CGI, Web-ISAPI-Ext, Web-ISAPI-Filter, Web-Includes, Web-WebSockets
+    state: present
+
+- name: Install Web management Tools
+  win_feature:
+    name: Web-Mgmt-Tools, Web-Mgmt-Console,Web-WMI, Web-Scripting-Tools, Web-Metabase
+    state: present
+
+- name: trigger handlers
+  ansible.windows.win_powershell: 
+    script: |
+      echo "Do nothing"
   notify: 
     - remove defaults
     - remove features
+
+- name: flush_handlers
+  meta: flush_handlers
+
 
 #- name: Create Temp dir 
 #  win_shell: |

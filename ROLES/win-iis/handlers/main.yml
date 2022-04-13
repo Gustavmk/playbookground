@@ -5,44 +5,6 @@
     name: w3svc
     state: restarted
 
-# install IIS features
-
-- name: Install IIS (Core Web-Server & tools) 
-  win_feature:
-    name: Web-WebServer, Web-Common-Http, Web-Default-Doc, Web-Http-Errors, Web-Static-Content, Web-Http-Redirect
-    state: present
-  listen: install features
-
-- name: Web health tools
-  win_feature:
-    name: Web-Health, Web-Http-Logging, Web-Custom-Logging, Web-Log-Libraries, Web-ODBC-Logging, Web-Request-Monitor, Web-http-Tracing
-    state: present
-  listen: install features
-
-- name: Web performance tools
-  win_feature:
-    name: Web-Performance, Web-Stat-Compression
-    state: present
-  listen: install features
-
-- name: Web security tools
-  win_feature:
-    name: Web-Security, Web-Filtering, Web-basic-Auth,  Web-IP-Security
-    state: present
-  listen: install features
-
-- name: Web App tools
-  win_feature:
-    name: Web-App-Dev, Web-AppInit, Web-Net-Ext, Web-Asp-Net, Web-Net-Ext45, Web-ASP, Web-Asp-Net45, Web-CGI, Web-ISAPI-Ext, Web-ISAPI-Filter, Web-Includes, Web-WebSockets
-    state: present
-  listen: install features
-
-- name: Install Web management Tools
-  win_feature:
-    name: Web-Mgmt-Tools, Web-Mgmt-Console,Web-WMI, Web-Scripting-Tools, Web-Metabase
-    state: present
-  listen: install features
-
 # Force - remove features
 
 - name: Install Web management Tools - Remove

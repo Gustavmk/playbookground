@@ -28,3 +28,13 @@ docker run -v ${PWD}:/work:ro --env-file ${PWD}/.env.linux.local -v  ${PWD}/role
 
 # Windows - IIS Role
 docker run -v ${PWD}:/work:ro --env-file ${PWD}/.env.local -v  ${PWD}/roles:/root/.ansible/roles:ro --rm gustavmk/ansiblecontainer:latest "./auth_azcli.sh ; ansible-playbook -i inventory/in-azure_rm.yml play-win-role-app1.yml"
+
+
+# LINUX - Running with compose  
+
+source .env.linux.local
+docker-compose run --rm ansiblecontainer  "./auth_azcli.sh ; az vm list -o table"
+
+docker-compose run --rm ansiblecontainer  "./auth_azcli.sh ; ansible-inventory -i inventory/ubuntu-azure_rm.yml --graph"
+
+docker-compose run --rm ansiblecontainer "./auth_azcli.sh ; ansible-playbook -i inventory/ubuntu-azure_rm.yml play-linux-role-docker.yml"

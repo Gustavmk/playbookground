@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  ansiblecontainer:
+    image: gustavmk/ansiblecontainer:latest
+    volumes:
+      - .:/work:rw
+      - ./roles:/root/.ansible/roles:ro
+    working_dir: /work
+    environment:
+      - TF_IN_AUTOMATION=true
+      - ARM_SUBSCRIPTION_ID=${ARM_SUBSCRIPTION_ID}
+      - ARM_CLIENT_SECRET=${ARM_CLIENT_SECRET}
+      - ARM_CLIENT_ID=${ARM_CLIENT_ID}
+      - ARM_TENANT_ID=${ARM_TENANT_ID}
+      - ANSIBLE_SSH_USER=${ANSIBLE_SSH_USER}
+      - ANSIBLE_SSH_USER_KEY=${ANSIBLE_SSH_USER_KEY}

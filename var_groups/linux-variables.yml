@@ -1,5 +1,8 @@
 ansible_port: 22  
-ANSIBLE_PERSISTENT_COMMAND_TIMEOUT: 300
+command_timeout: 300                        # PERSISTENT_COMMAND_TIMEOUT
 ansible_command_timeout: 300
+ansible_host_key_checking: False
+ansible_ssh_host_key_checking: False
+host_pattern_mismatch: ignore
 ansible_user: '{{ lookup("env", "ANSIBLE_SSH_USER") }}'
-ansible_ssh_private_key_file: "{{ lookup('env', 'SSH_KEY') }}"
+ansible_ssh_private_key_file: "{{ lookup('env', 'ANSIBLE_SSH_USER_KEY') }}"

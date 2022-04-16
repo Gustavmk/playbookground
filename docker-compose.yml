@@ -9,6 +9,8 @@ services:
     working_dir: /work
     environment:
       - TF_IN_AUTOMATION=true
+      - ANSIBLE_HOST_KEY_CHECKING=False
+      - ANSIBLE_HOST_PATTERN_MISMATCH=ignore
       - ARM_SUBSCRIPTION_ID=${ARM_SUBSCRIPTION_ID}
       - ARM_CLIENT_SECRET=${ARM_CLIENT_SECRET}
       - ARM_CLIENT_ID=${ARM_CLIENT_ID}

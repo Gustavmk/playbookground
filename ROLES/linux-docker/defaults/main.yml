@@ -5,7 +5,6 @@ docker_packages:
   - software-properties-common
   - docker-ce
   - docker-ce-cli
-  - docker-compose
   - containerd.io
   - python3-pip
   - python3-docker

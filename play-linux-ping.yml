@@ -1,0 +1,9 @@
+- name: Test ping 
+  hosts: all
+  vars_files:
+    - var_groups/linux-variables.yml
+  
+  tasks:
+
+    - name: Pinging
+      ansible.builtin.ping:

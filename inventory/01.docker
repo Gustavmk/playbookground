@@ -1,2 +1,2 @@
 [servers]
-40.113.238.203  ansible_user=adminswarm    ansible_ssh_private_key_file=id_rsa.key
+40.113.238.203  #ansible_user=adminswarm    ansible_ssh_private_key_file=id_rsa.key

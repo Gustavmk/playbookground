@@ -44,4 +44,4 @@ terraform.rc
 
 # SSH
 *.key
-
+id_rsa

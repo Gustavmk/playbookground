@@ -38,3 +38,5 @@ docker-compose run --rm ansiblecontainer  "./auth_azcli.sh ; az vm list -o table
 docker-compose run --rm ansiblecontainer  "./auth_azcli.sh ; ansible-inventory -i inventory/ubuntu-azure_rm.yml --graph"
 
 docker-compose run --rm ansiblecontainer "./auth_azcli.sh ; ansible-playbook -i inventory/ubuntu-azure_rm.yml play-linux-role-docker.yml"
+
+docker-compose run --rm ansiblecontainer "ansible -i inventory/01.docker servers -m ping -vvv"

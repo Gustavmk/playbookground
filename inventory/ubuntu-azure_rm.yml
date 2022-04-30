@@ -4,7 +4,7 @@ plugin: azure_rm
 include_vm_resource_groups:
   - '*'
 
-auth_source: cli
+auth_source: auto
 
 #conditional_groups:
 #  OS_Linux: "'UbuntuServer' in image.offer"

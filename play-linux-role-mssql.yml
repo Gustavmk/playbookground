@@ -1,0 +1,15 @@
+- name: install MSSQL
+  hosts: all
+  vars_files:
+    - var_groups/linux-variables.yml
+  vars:
+    mssql_accept_microsoft_odbc_driver_17_for_sql_server_eula: true
+    mssql_accept_microsoft_cli_utilities_for_sql_server_eula: true
+    mssql_accept_microsoft_sql_server_standard_eula: true
+    mssql_password: "p@55w0rD2121"
+    mssql_edition: Developer
+    mssql_tcp_port: 1433
+    mssql_ip_address: 0.0.0.0
+  
+  roles:
+   - linux-mssql

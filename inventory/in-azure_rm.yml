@@ -33,4 +33,4 @@ exclude_host_filters:
 # excludes hosts that are powered off
 #  - powerstate != 'running'
 # excludes SO 
-  - image.offer != "UbuntuServer"
+  - image.offer != "WindowsServer"
